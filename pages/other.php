@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    .menu{
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+        margin: 0 5px;
+        text-decoration: none;
+        border: 2px solid lightblue;
+        text-align: center;
+    }
+
+    .menu:hover{
+        background-color: lightblue;
+    }
+
+    .menu__wrapper{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+
+</style>
+
     <?php if(isset($MainPage)) :?>
+        <?php
+//        $linkHeight=count($link);
+//        $linkHeight=$linkHeight-1;
+//        $link[$linkHeight];
+//        if($link[$linkHeight]==null||$link[$linkHeight]=='null'){
+//            $linkName=$link[$linkHeight-1];
+//        } else{
+//            $linkName=$link[$linkHeight];
+//        }
+
+        $linkName=$link;
+        ?>
+
+
         <?php foreach ($MainPage as $item): ?>
             <?php
-                if($item['link']==$link) {
+                if($item['link']==$linkName) {
                     $title = $item['title'];
                     $content = $item['content'];
                 }

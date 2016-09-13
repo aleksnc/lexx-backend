@@ -33,7 +33,11 @@
         <mandatory>1</mandatory>
         <data-type>int(2)</data-type>
       </column>
-      <key id="10" parent="2" name="PRIMARY">
+      <column id="10" parent="2" name="evel">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="11" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

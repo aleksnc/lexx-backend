@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    .menu{
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+        margin: 0 5px;
+        text-decoration: none;
+        border: 2px solid lightblue;
+        text-align: center;
+    }
+
+    .menu:hover{
+        background-color: lightblue;
+    }
+
+    .menu__wrapper{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+
+</style>
+
 <head>
     <meta charset="UTF-8">
 <title>ЛЭКС СПБ</title>
+
+
 </head>
 <body>
 <H1>ЛЭКС СПБ</H1>
@@ -11,9 +40,9 @@
     <div class="menu__wrapper">
         <a class="menu" href="index.php">Home</a>
         <?php foreach ($MainPage as $item): ?>
-            <?php if($item['header_menu']=='1') :?>
-                <a class="menu" href="<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a>
-            <?php endif; ?>
+            <?php
+                $link =$item['link']
+            ?>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
