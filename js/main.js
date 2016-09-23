@@ -28,8 +28,10 @@ $(document).ready(function(){
 
 
   $('.explorer__path-list').click(function() {
-    $(this).toggleClass('ico-blog-o');
-
+    var lvParth = $(this).data('lv');
+    if(lvParth!=0) {
+      $(this).toggleClass('ico-blog-o');
+    }
     var dataBtn= $(this).data('lv');
 
     if(dataBtn ==1) {
@@ -44,10 +46,12 @@ $(document).ready(function(){
     var $this = $(this);
     var $child = $this.next();
     var $childlv = $child.data('lv')+'a';
+    var $childlv_n = $child.data('lv');
+    var $thislv_n = $(this).data('lv');
     var $thislv = $(this).data('lv')+'a';
     var $staticLv =$childlv;
 
-    if($thislv<$childlv){
+    if($thislv_n<$childlv_n){
       $child.toggle();
       findChild($child, $childlv, $staticLv);
     }
@@ -81,19 +85,26 @@ $(document).ready(function(){
 
       }
     }
+
+    var IdParth = $(this).data('id');
+
+    $.ajax({
+      type: 'POST',
+      url: 'admin',
+      data: 'name='+IdParth,
+      success: function(data){
+        $('.explorer__edit').empty();
+        $('.explorer__edit').append('<textarea name="editor1" class="editor" id="editor1" rows="10" cols="80" >'+data+'</textarea>');
+
+        tinymce.init({ selector:'#editor1' });
+      }
+    });
   });
 
 
-$('.explorer__path-list').on('click',function() {
-        $(this).toggleClass('ico-blog-o');
-        var htmla= $(this).find('a').html();
 
-        console.log(htmla);
-
-        $('.cke_editable p').value = htmla;
-});
 /* right-block edit*/
 
-  CKEDITOR.replace('editor1');
-
 });
+
+

@@ -28,13 +28,19 @@
     $app->configureMode('development', function() use($app){
         $app->config(array(
             //DB
-            'host'=>'localhost',
-            'user'=>'user',
-            'pass'=>'12345',
-            'db' => 'lexx',
+            // 'host'=>'localhost',
+            // 'user'=>'user',
+            // 'pass'=>'12345',
+            // 'db' => 'lexx',    
+
+			'host'=>'localhost',
+            'user'=>'dedmoro5ru_lexx',
+            'pass'=>'q1w2Q!W@',
+            'db' => 'dedmoro5ru_lexx',
 
             'debug'=> TRUE,
         ));
+
     });
 
 
